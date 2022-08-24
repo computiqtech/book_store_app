@@ -23,7 +23,7 @@ Build a book store mobile application. The store contain a list of available boo
 The main page should contain a list of the available books. When tapping on a book, the second page (Book Details Page) will be navigated. Use Scrollable view for the list of books. ALso there is a simple search on the top of the page.
 
 
-### Cart Page
+### Cart Page (Optional)
 This page can view the ordered books.
 
 ### Details Page
