@@ -38,10 +38,10 @@ This have the details of the book which is:
 It is the page where you can add new books to the store.
 
 ## FLow
-1- Build the UI (from figma design).
-2- seperate the widgets to small and organized files.
-3- Build models that contain the book data (You can build one model or more).
-4- Try to seperate the logic (Functions and data) from the UI.
+1. Build the UI (from figma design).
+2. seperate the widgets to small and organized files.
+3. Build models that contain the book data (You can build one model or more).
+4. Try to seperate the logic (Functions and data) from the UI.
 
 ## Figma Design
 https://www.figma.com/file/4BGkiFfTPT7b8K9pyFTBD6/Online-Book-Store-App-(2019)-(Community)?node-id=0%3A1
