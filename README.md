@@ -11,7 +11,7 @@ Task resolution process:
 
 
 
-Task 3:
+### Task 3:
 Build a book store mobile application. The store contain a list of available books with the ability to add custom books to the store as well as view, order them.
 
 * Don't use pre-made widgets (packges).
