@@ -1,17 +1,17 @@
-Task 3 - Book Store App
+# Task 3 - Book Store App
 
 Task resolution process:
 
-- Fork the repo
-- Clone the forked repo to your local machine
-- Resolve the task
-- Commit your solution
-- Push to GitHub
-- create a pull request
+-Fork the repo
+-Clone the forked repo to your local machine
+-Resolve the task
+-Commit your solution
+-Push to GitHub
+-create a pull request
 
 
 
-# Task 3:
+Task 3:
 Build a book store mobile application. The store contain a list of available books with the ability to add custom books to the store as well as view, order them.
 
 * Don't use pre-made widgets (packges).
