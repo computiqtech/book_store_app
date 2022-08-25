@@ -1,0 +1,45 @@
+import 'package:book_store_app/home_page/books_main/rating_widget.dart';
+import 'package:flutter/material.dart';
+
+
+import 'books_model.dart';
+
+class MyBook extends StatelessWidget{
+  const MyBook({Key? key, required this.bookData}) : super(key: key);
+  final BookData bookData;
+
+
+  @override
+  Widget build(BuildContext context){
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(height: 150, width: 21, color: Color(0xffE5E5E5),
+        child: Row(
+          children: [ClipRRect(borderRadius:BorderRadius.circular(8) ,
+              child: Image.network(bookData.bookImage, height: 280,width: 100,)),
+            Padding(
+              padding: const EdgeInsets.only(left:20),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(bookData.bookName,style: const TextStyle(
+                        fontSize: 18,fontWeight: FontWeight.bold
+
+                    ),),
+                  ),Text(bookData.bookAuthor,style: const TextStyle(
+                    fontSize: 14,
+                  ),),
+
+                  Text(bookData.bookPrice,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: StarRating(rating: bookData.bookRate,),
+                  )
+                ],),
+            ),
+          ],
+        ),),
+    );
+  }
+}
