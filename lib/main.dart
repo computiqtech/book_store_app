@@ -1,3 +1,4 @@
+import 'package:book_store_app/home_page/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text("Book Store App"),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Book Store',
+      theme: ThemeData(primaryColor: Colors.blue),
+      home: HomePage(),
     );
   }
 }
