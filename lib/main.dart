@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'add_book/model.dart';
+import 'home_page/home_page.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,12 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const GetMaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text("Book Store App"),
+        body:
+          HomePage(),
         ),
-      ),
     );
   }
 }
+
