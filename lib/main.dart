@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 import 'home_page/books_main/books_list_bulder.dart';
 import 'home_page/my_app_bar/app_bar_footer.dart';
 import 'home_page/my_app_bar/search_bar.dart';
@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
             child: Row(
               children: const [
                 SizedBox(width: 10,),
-                UserImage(),SizedBox(width: 10,),
+                UserImage(),
+                SizedBox(width: 10,),
                 UserName(),
                 SizedBox(width: 240,),
                 Icon(Icons.more_vert_sharp)
@@ -39,6 +40,24 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

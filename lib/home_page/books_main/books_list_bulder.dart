@@ -10,6 +10,9 @@ class MyBooksCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: ListView(children: BookData.books.map((e) => MyBook(bookData: e)).toList(),));
+    return Expanded(child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: ListView(children: BookData.books.map((e) => MyBook(bookData: e)).toList(),),
+    ));
   }
 }
