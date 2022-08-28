@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'main_page/main_page.dart';
 
 
 void main() {
+
   runApp(const MyApp());
 }
 
@@ -17,9 +19,18 @@ class MyApp extends StatelessWidget {
 
     ),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        backgroundColor: Color(0xffE5E5E5),
-        body: MyListBook(),
+      home:  Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 0,
+          elevation: 0,
+          backgroundColor: const Color(0xffE5E5E5),
+          systemOverlayStyle: const SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.dark,
+            statusBarColor: Colors.transparent,
+          ),
+        ),
+        backgroundColor: const Color(0xffE5E5E5),
+        body: const MyListBook(),
       ),
     );
   }
