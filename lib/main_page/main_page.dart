@@ -66,6 +66,7 @@ class MyListBook extends StatelessWidget {
           ],
         ),
       ),
+            backgroundColor: const Color(0xffE5E5E5),
       floatingActionButton: const MyFloatingActionButtons(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
