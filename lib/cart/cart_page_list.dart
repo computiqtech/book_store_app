@@ -1,0 +1,81 @@
+
+
+
+
+import 'package:get/get.dart';
+import 'package:book_store_app/page1/page_1_model.dart';
+import 'package:flutter/material.dart';
+
+class CartListView extends StatelessWidget {
+  const CartListView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+        return ListView(
+          children: BooksList.cartList.map((e) => Container(
+            padding: const EdgeInsets.only(bottom: 23),
+            child: Row(
+              children: [
+                Container(
+                    width: 72,
+                    height: 106,
+                    margin: const EdgeInsets.only(left: 36),
+                    child: Image.network(e.imageLink)),
+                Container(
+                  height: 106,
+                  //color: Colors.cyan,
+                  padding: EdgeInsets.only(left: 26),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 4),
+                        child: Text(e.Bookname, style:const TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                            fontFamily: 'Poppins'
+                        ),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 7),
+                        child: Text(e.Author, style:const TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
+                            color: Color.fromRGBO(6, 7, 13, 1),
+                            fontFamily: 'Poppins'
+                        )),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15),
+                        child: Text("\$${e.Price}", style:const TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                            fontFamily: 'Poppins'
+                        ),),
+                      ),
+                      Row(
+                        children:const [
+                          Icon(Icons.star, color: Color.fromRGBO(255, 196, 31, 1), size: 14,),
+                          Icon(Icons.star, color: Color.fromRGBO(255, 196, 31, 1), size: 14,),
+                          Icon(Icons.star, color: Color.fromRGBO(255, 196, 31, 1), size: 14,),
+                          Icon(Icons.star, color: Color.fromRGBO(255, 196, 31, 1), size: 14,),
+                          Icon(Icons.star, color: Color.fromRGBO(237, 237, 239, 1), size: 14,),
+                        ],
+                      )
+
+                    ],
+                  ),
+                ),
+                const Spacer(),
+
+              ],
+            ),
+          )).toList(),
+        );
+      }
+    );
+  }
+}
