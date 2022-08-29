@@ -38,7 +38,7 @@ class _CardBookState extends State<CardBook> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Text(widget.book.title,style: const TextStyle(
+                   Text(widget.book.title.value,style: const TextStyle(
                       fontSize: 16,fontWeight: FontWeight.w600
                   ),),
 

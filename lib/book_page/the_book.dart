@@ -34,7 +34,7 @@ class _BookPageState extends State<BookPage> {
                   )
                   ),
                   const SizedBox(height: 12,),
-                  Text(widget.book.title,style: TextStyle(
+                  Text(widget.book.title.value,style: TextStyle(
                     fontSize: 24, fontWeight: FontWeight.w600
                   ),),
                   Text(widget.book.author,style: TextStyle(

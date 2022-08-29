@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     () {
                       return ListView(
                         controller: ScrollController(),
-                        children: Book.books.where((e) => e.title.contains(query)).map((e) => CardBook(book: e,)).toList(),
+                        children: Book.books.where((e) => e.title.value.contains(query)).map((e) => CardBook(book: e,)).toList(),
                       );
                     }
                   ),

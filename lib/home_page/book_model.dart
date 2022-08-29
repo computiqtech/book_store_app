@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 class Book{
-  final String title;
+  final RxString title;
   final String author;
   final String price,imgPath,desc;
   final RxBool inCart,isSaved;
@@ -8,7 +8,7 @@ class Book{
   Book(String tit,String auth,String p,String img,String de,[bool? inCart,bool? isSaved])
       :inCart = (inCart??false).obs,
         isSaved= (isSaved??false).obs,
-      title=tit,
+      title=tit.obs,
       author=auth,
       price=p,
       imgPath=img,

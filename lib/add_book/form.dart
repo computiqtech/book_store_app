@@ -16,34 +16,33 @@ class _BookFormState extends State<BookForm> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10),
-      child: Expanded(
-        child: Column(
-          children: [
-            SizedBox(height: 56,),
-            BookField(txt: 'Book Name',ctrler: bookNameC),
-            SizedBox(height: 14,),
-            BookField(txt: 'Author Name',ctrler:authorC),
-            SizedBox(height: 14,),
-            BookField(txt: 'Price',ctrler: pricC),
-            SizedBox(height: 14,),
-            BookField(txt: 'Image link',ctrler: imgPathC),
-            SizedBox(height: 14,),
-            BookField(txt: 'Description',ctrler: descripC,isDes: true,),
-            SizedBox(height: 14,),
-            ElevatedButton(onPressed: (){
-              Book.add(bookNameC.text,authorC.text,pricC.text,imgPathC.text,descripC.text,false.obs);
-            },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity,55),
-                //padding: EdgeInsets.symmetric(horizontal: 24,vertical: 8),
-                primary: Colors.black,
-                elevation: 0,
-              ),
-              child: Text('Add',style: TextStyle(color: Colors.white),)
-              ),
+      child: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          SizedBox(height: 56,),
+          BookField(txt: 'Book Name',ctrler: bookNameC),
+          SizedBox(height: 14,),
+          BookField(txt: 'Author Name',ctrler:authorC),
+          SizedBox(height: 14,),
+          BookField(txt: 'Price',ctrler: pricC),
+          SizedBox(height: 14,),
+          BookField(txt: 'Image link',ctrler: imgPathC),
+          SizedBox(height: 14,),
+          BookField(txt: 'Description',ctrler: descripC,isDes: true,),
+          SizedBox(height: 14,),
+          ElevatedButton(onPressed: (){
+            Book.add(bookNameC.text,authorC.text,pricC.text,imgPathC.text,descripC.text,false.obs);
+          },
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(double.infinity,55),
+              //padding: EdgeInsets.symmetric(horizontal: 24,vertical: 8),
+              primary: Colors.black,
+              elevation: 0,
+            ),
+            child: Text('Add',style: TextStyle(color: Colors.white),)
+            ),
 
-          ],
-        ),
+        ],
       ),
     );;
   }
