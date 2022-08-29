@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SearchBar extends StatelessWidget {
@@ -27,12 +28,11 @@ class SearchBar extends StatelessWidget {
             Text(
               "Search...",
               style: GoogleFonts.poppins(
-                color: Theme.of(context).colorScheme.secondary,
-                fontSize: 16,
-                fontWeight: FontWeight.w400
-              ),
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400),
             ),
-            const Icon(Icons.search),
+            SvgPicture.asset("assets/images/icons/search.svg"),
           ],
         ),
       ),
