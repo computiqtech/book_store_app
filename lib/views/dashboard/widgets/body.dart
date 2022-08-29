@@ -13,15 +13,14 @@ class Body extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Obx(
-          () => IndexedStack(
-            index: controller.tabIndex.value,
-            children: const [
-              HomeView(),
-              CartView(),
-              HomeView(),
-            ],
-          ),
+        PageView(
+          controller: controller.pageController,
+          onPageChanged: controller.changeTabIndex,
+          children: const [
+            HomeView(),
+            CartView(),
+            HomeView(),
+          ],
         ),
         const CustomBottomNavBar(),
       ],
