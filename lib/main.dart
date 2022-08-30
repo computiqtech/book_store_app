@@ -1,7 +1,7 @@
-import 'package:book_store_app/main_views/listed_books.dart';
-import 'package:book_store_app/main_views/navigators.dart';
-import 'package:book_store_app/main_views/profile.dart';
-import 'package:book_store_app/main_views/search_box.dart';
+import 'package:my_book_store_app/main_views/listed_books.dart';
+import 'package:my_book_store_app/main_views/navigators.dart';
+import 'package:my_book_store_app/main_views/profile.dart';
+import 'package:my_book_store_app/main_views/search_box.dart';
 import 'package:flutter/material.dart';
 
 void main() {

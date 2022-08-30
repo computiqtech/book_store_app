@@ -1,12 +1,12 @@
-import 'package:book_store_app/book_details_page/book_details_views/book_author.dart';
-import 'package:book_store_app/book_details_page/book_details_views/book_cover.dart';
-import 'package:book_store_app/book_details_page/book_details_views/book_description.dart';
-import 'package:book_store_app/book_details_page/book_details_views/book_rating.dart';
-import 'package:book_store_app/book_details_page/book_details_views/book_title.dart';
-import 'package:book_store_app/book_details_page/book_details_views/bottom_buttons.dart';
-import 'package:book_store_app/book_details_page/book_details_views/top_bar.dart';
-import 'package:book_store_app/main_views/listed_books.dart';
-import 'package:book_store_app/models/book_model.dart';
+import 'package:my_book_store_app/book_details_page/book_details_views/book_author.dart';
+import 'package:my_book_store_app/book_details_page/book_details_views/book_cover.dart';
+import 'package:my_book_store_app/book_details_page/book_details_views/book_description.dart';
+import 'package:my_book_store_app/book_details_page/book_details_views/book_rating.dart';
+import 'package:my_book_store_app/book_details_page/book_details_views/book_title.dart';
+import 'package:my_book_store_app/book_details_page/book_details_views/bottom_buttons.dart';
+import 'package:my_book_store_app/book_details_page/book_details_views/top_bar.dart';
+import 'package:my_book_store_app/main_views/listed_books.dart';
+import 'package:my_book_store_app/models/book_model.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsPage extends StatelessWidget {

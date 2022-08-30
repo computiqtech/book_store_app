@@ -1,5 +1,5 @@
-import 'package:book_store_app/cart_page/cart_page.dart';
-import 'package:book_store_app/models/book_model.dart';
+import 'package:my_book_store_app/cart_page/cart_page.dart';
+import 'package:my_book_store_app/models/book_model.dart';
 import 'package:flutter/material.dart';
 
 //import 'package:google_fonts/google_fonts.dart';
