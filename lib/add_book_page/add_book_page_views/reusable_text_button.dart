@@ -37,7 +37,6 @@ Widget ReusableTextField(
       controller: myControler,
       onChanged: ((X) {
         givenValues = AddBookPage.bookName.text;
-        print(givenValues);
       }),
     ),
   );

@@ -32,7 +32,7 @@ class Profile extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.w300, fontSize: 20),
               )),
-          Spacer(),
+          const Spacer(),
           TextButton(
               onPressed: () => print('hi'),
               child: const Icon(

@@ -3,7 +3,6 @@ import 'package:book_store_app/add_book_page/add_book_page_views/reusable_text_b
 import 'package:book_store_app/book_details_page/book_details_views/top_bar.dart';
 import 'package:book_store_app/main.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class AddBookPage extends StatelessWidget {
   const AddBookPage({
@@ -49,7 +48,7 @@ class AddBookPage extends StatelessWidget {
               )
             ],
           ),
-          floatingActionButton: AddBookButton()
+          floatingActionButton: const AddBookButton()
           ),
     );
   }

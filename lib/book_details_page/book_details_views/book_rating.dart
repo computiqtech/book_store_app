@@ -1,5 +1,3 @@
-
-import 'package:book_store_app/models/book_model.dart';
 import 'package:flutter/material.dart';
 
 class BookRating extends StatelessWidget {
@@ -16,7 +14,7 @@ class BookRating extends StatelessWidget {
         StarDisplay(
           value: rating,
         ),
-        Text("  " + rating.toString() + "/5")
+        Text("  $rating/5")
       ],
     );
   }

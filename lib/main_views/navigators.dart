@@ -1,8 +1,6 @@
 import 'package:book_store_app/add_book_page/add_book_page.dart';
-import 'package:book_store_app/book_details_page/book_details_page.dart';
 import 'package:book_store_app/cart_page/cart_page.dart';
 import 'package:book_store_app/main.dart';
-import 'package:book_store_app/main_views/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -47,12 +45,12 @@ class Navigators extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      currentPageCartRx?.value = currentPageCart ?? false;
+                      currentPageCartRx.value = currentPageCart ?? false;
 
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MyHomePage()));
+                              builder: (context) => const MyHomePage()));
                     },
                     child: Obx(() {
                       return Icon(Icons.home,
@@ -69,7 +67,7 @@ class Navigators extends StatelessWidget {
                     ),
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => CartPage()));
+                          MaterialPageRoute(builder: (context) => const CartPage()));
                     },
                     child: Icon(Icons.shopping_cart_rounded,
                         color: currentPageCartRx == false.obs
@@ -86,7 +84,7 @@ class Navigators extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AddBookPage()));
+                                builder: (context) => const AddBookPage()));
                       },
                       child: Icon(
                         Icons.add,

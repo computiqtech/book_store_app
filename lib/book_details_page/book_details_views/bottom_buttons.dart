@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 class BuyAndDetailsButtons extends StatelessWidget {
   const BuyAndDetailsButtons({
     Key? key,
-    required this.boughtBook, required this.desiredBookIndex,
+    required this.boughtBook,
+    required this.desiredBookIndex,
   }) : super(key: key);
   final BookModel boughtBook;
   final int desiredBookIndex;
@@ -20,7 +21,7 @@ class BuyAndDetailsButtons extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Padding(
-            padding: EdgeInsets.only(bottom: 20, left: 25),
+            padding: const EdgeInsets.only(bottom: 20, left: 25),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -45,7 +46,7 @@ class BuyAndDetailsButtons extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     )),
-                    child: Icon(Icons.preview, color: Colors.black54),
+                    child: const Icon(Icons.preview, color: Colors.black54),
                     onPressed: () => print('object'),
                   ),
                 ),
@@ -70,7 +71,7 @@ class BuyAndDetailsButtons extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     )),
-                    child: Icon(Icons.reviews, color: Colors.black54),
+                    child: const Icon(Icons.reviews, color: Colors.black54),
                     onPressed: () => print('object'),
                   ),
                 ),
@@ -101,16 +102,16 @@ class BuyAndDetailsButtons extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 )),
                 child: Text("Buy now for $price\$",
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w400,
                         color: Colors.white)),
                 onPressed: () {
                   BookModel.book[desiredBookIndex].inCart = true;
                   Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CartPage()));
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CartPage()));
                 },
               ),
             ),

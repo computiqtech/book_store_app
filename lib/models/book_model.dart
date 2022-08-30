@@ -9,7 +9,7 @@ class BookModel {
     required this.author,
     required this.price,
     required this.description,
-    this.inCart,
+    required this.inCart,
   });
   final String imageUrl;
   final double rating;
@@ -17,8 +17,7 @@ class BookModel {
   final String author;
   final String price;
   final String description;
-  late bool? inCart;
-  
+  bool inCart;
   static List<BookModel> book = [
      BookModel(
       imageUrl:
@@ -38,7 +37,7 @@ class BookModel {
       author: 'Suzy Monkes2',
       description: '2',
       price: '12',
-      inCart: true
+      inCart: false
     ),
   ];
 }

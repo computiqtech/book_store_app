@@ -49,7 +49,7 @@ class AddBookButton extends StatelessWidget {
                         author: AddBookPage.authorName.text,
                         price: AddBookPage.price.text,
                         description: AddBookPage.description.text,
-                        inCart: true));
+                        inCart: false));
                     Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const MyHomePage()));
                     AddBookPage.imageLink.clear();

@@ -1,6 +1,5 @@
 import 'package:book_store_app/book_details_page/book_details_page.dart';
 import 'package:book_store_app/book_details_page/book_details_views/book_rating.dart';
-import 'package:book_store_app/main.dart';
 import 'package:book_store_app/main_views/search_box.dart';
 import 'package:book_store_app/models/book_model.dart';
 import 'package:flutter/material.dart';
@@ -15,16 +14,18 @@ class ListedBooks extends StatelessWidget {
   final double? paddingRight;
   final bool? toggleCartFilter;
   static ScrollController myScrollController = ScrollController();
+  static int? desiredBookIndex;
 
   bool filterSearchFunction(
       BookModel element, String searchWord, bool toggleCartFilter) {
-    if (toggleCartFilter == false && element.title.toLowerCase().contains(searchWord.toLowerCase())) {
+    if (toggleCartFilter == false &&
+        element.title.toLowerCase().contains(searchWord.toLowerCase())) {
       return true;
     }
-      if (element.inCart == true && toggleCartFilter == true) {
-        return true;
-      } else {
-        return false;
+    if (element.inCart == true && toggleCartFilter == true) {
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -43,7 +44,7 @@ class ListedBooks extends StatelessWidget {
                 bottom: 5, left: paddingLeft ?? 0, right: paddingRight ?? 0),
             children: BookModel.book
                 .where((element) => filterSearchFunction(element,
-                    SearchBox.searchWord.value, toggleCartFilter??false))
+                    SearchBox.searchWord.value, toggleCartFilter ?? false))
                 .map((e) => TextButton(
                       style: TextButton.styleFrom(),
                       child: Container(
@@ -92,7 +93,7 @@ class ListedBooks extends StatelessWidget {
                                         height: 2),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.only(top: 10),
+                                    padding: const EdgeInsets.only(top: 10),
                                     child: StarDisplay(
                                       value: e.rating,
                                     ),
@@ -104,7 +105,7 @@ class ListedBooks extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        int desiredBookIndex = BookModel.book.indexOf(e);
+                        desiredBookIndex = BookModel.book.indexOf(e);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
