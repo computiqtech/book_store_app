@@ -18,6 +18,7 @@ class CardsList extends StatelessWidget {
       return
       ListView(
         controller: ScrollController(),
+        padding: EdgeInsets.zero,
         children: Book.books.map((e) =>
             MyCard(book: e,)).toList(),
       );
