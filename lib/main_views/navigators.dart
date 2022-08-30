@@ -1,6 +1,6 @@
-import 'package:book_store_app/add_book_page/add_book_page.dart';
-import 'package:book_store_app/cart_page/cart_page.dart';
-import 'package:book_store_app/main.dart';
+import 'package:my_book_store_app/add_book_page/add_book_page.dart';
+import 'package:my_book_store_app/cart_page/cart_page.dart';
+import 'package:my_book_store_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

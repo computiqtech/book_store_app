@@ -1,7 +1,7 @@
-import 'package:book_store_app/book_details_page/book_details_page.dart';
-import 'package:book_store_app/book_details_page/book_details_views/book_rating.dart';
-import 'package:book_store_app/main_views/search_box.dart';
-import 'package:book_store_app/models/book_model.dart';
+import 'package:my_book_store_app/book_details_page/book_details_page.dart';
+import 'package:my_book_store_app/book_details_page/book_details_views/book_rating.dart';
+import 'package:my_book_store_app/main_views/search_box.dart';
+import 'package:my_book_store_app/models/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
