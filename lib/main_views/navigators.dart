@@ -1,4 +1,4 @@
-
+import 'package:book_store_app/add_book_page/add_book_page.dart';
 import 'package:book_store_app/book_details_page/book_details_page.dart';
 import 'package:book_store_app/main_views/profile.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class Navigators extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 25, bottom: 10),
             child: Container(
-              width: 170,
+              width: 250,
               height: 60,
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -31,22 +31,45 @@ class Navigators extends StatelessWidget {
                         blurRadius: 4,
                         offset: const Offset(0, 9))
                   ]),
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const BookDetailsPage()));
-                  },
-                  child: Icon(Icons.home)
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                      style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      onPressed: () {
+                        print('object');
+                      },
+                      child: Icon(Icons.home, color: Colors.grey[500])),
+                  TextButton(
+                      style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      onPressed: () {
+                        print('object');
+                      },
+                      child: Icon(Icons.shopping_cart_rounded, color: Colors.grey[500])),
+                  TextButton(
+                      style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AddBookPage()));
+                      },
+                      child: Icon(Icons.add, color: Colors.grey[500],)),
+                ],
+              ),
             ),
-          ),
-      )],
+          )
+        ],
       ),
     );
   }
