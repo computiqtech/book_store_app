@@ -19,6 +19,7 @@ class SavedList extends StatelessWidget {
       return
           ListView(
             controller: ScrollController(),
+            padding: EdgeInsets.zero,
             children: Book.books.where((e) => e.isFav.value).map((e) =>
                 MyCard(book: e,)).toList(),
           );
