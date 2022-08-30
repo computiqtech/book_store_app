@@ -34,6 +34,10 @@ class _BookFormState extends State<BookForm> {
               onPressed: () {
                 Book.add(bookNameC.text, authorC.text, pricC.text,
                     imgPathC.text, descripC.text, false.obs);
+                bookNameC.text=''; authorC.text=''; pricC.text='';
+                imgPathC.text=''; descripC.text='';
+                setState(() {
+                });
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(double.infinity, 55),
@@ -41,10 +45,11 @@ class _BookFormState extends State<BookForm> {
                 primary: Colors.black,
                 elevation: 0,
               ),
-              child: Text(
+              child: const Text(
                 'Add',
                 style: TextStyle(color: Colors.white),
               )),
+          SizedBox(height: 90,),
         ],
       ),
     );

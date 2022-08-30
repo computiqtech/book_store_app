@@ -23,7 +23,7 @@ class BookField extends StatelessWidget {
         maxLines: isDes == null ? 1 : 4,
         decoration: InputDecoration(
           hintStyle: TextStyle(fontSize: 17),
-          hintText: '$txt',
+          hintText: txt,
           border: InputBorder.none,
           contentPadding: EdgeInsets.symmetric(vertical: 20),
         ),
