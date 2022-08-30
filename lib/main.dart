@@ -1,7 +1,9 @@
+import 'package:book_store_app/main_page/mainPage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const GetMaterialApp(home:MainPage()) );
 }
 
 class MyApp extends StatelessWidget {
