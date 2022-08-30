@@ -19,6 +19,7 @@ class BoughtList extends StatelessWidget {
       return
         ListView(
           controller: ScrollController(),
+          padding: EdgeInsets.zero,
           children: Book.books.where((e) => e.buy.value).map((e) =>
               MyCard(book: e,)).toList(),
         );
