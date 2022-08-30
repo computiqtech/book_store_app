@@ -31,25 +31,25 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.grey[100],
-        child: GestureDetector(
-          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              const SizedBox(height: 50),
-              const Profile(),
-              const SearchBox(/*currentText: currentText*/),
-              title('Book List'),
-              const ListedBooks()
-            ]),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        body: Container(
+          color: Colors.grey[100],
+          child:Padding(
+              padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+              child:
+                  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                const SizedBox(height: 50),
+                const Profile(),
+                const SearchBox(/*currentText: currentText*/),
+                title('Book List'),
+                const ListedBooks()
+              ]),
           ),
         ),
+        floatingActionButton:  Navigators(currentPageHome: true,),
       ),
-      floatingActionButton: const Navigators(),
     );
   }
 }

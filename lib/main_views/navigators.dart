@@ -1,16 +1,22 @@
 import 'package:book_store_app/add_book_page/add_book_page.dart';
 import 'package:book_store_app/book_details_page/book_details_page.dart';
+import 'package:book_store_app/cart_page/cart_page.dart';
+import 'package:book_store_app/main.dart';
 import 'package:book_store_app/main_views/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Navigators extends StatelessWidget {
-  const Navigators({
-    Key? key,
-  }) : super(key: key);
-
+  Navigators({Key? key, this.currentPageCart, this.currentPageHome})
+      : super(key: key);
+  bool? currentPageHome;
+  bool? currentPageCart;
+  Rx<bool> currentPageHomeRx = false.obs;
+  Rx<bool> currentPageCartRx = false.obs;
   @override
   Widget build(BuildContext context) {
+    currentPageCartRx.value = currentPageCart ?? false;
+    currentPageHomeRx.value = currentPageHome ?? false;
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -35,15 +41,41 @@ class Navigators extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                      style: TextButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
+                    style: TextButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
                       ),
-                      onPressed: () {
-                        print('object');
-                      },
-                      child: Icon(Icons.home, color: Colors.grey[500])),
+                    ),
+                    onPressed: () {
+                      currentPageCartRx?.value = currentPageCart ?? false;
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MyHomePage()));
+                    },
+                    child: Obx(() {
+                      return Icon(Icons.home,
+                          color: currentPageHomeRx == false.obs
+                              ? Colors.grey
+                              : Colors.blue);
+                    }),
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => CartPage()));
+                    },
+                    child: Icon(Icons.shopping_cart_rounded,
+                        color: currentPageCartRx == false.obs
+                            ? Colors.grey
+                            : Colors.blue),
+                  ),
                   TextButton(
                       style: TextButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -51,20 +83,15 @@ class Navigators extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        print('object');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AddBookPage()));
                       },
-                      child: Icon(Icons.shopping_cart_rounded, color: Colors.grey[500])),
-                  TextButton(
-                      style: TextButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AddBookPage()));
-                      },
-                      child: Icon(Icons.add, color: Colors.grey[500],)),
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.grey[500],
+                      )),
                 ],
               ),
             ),

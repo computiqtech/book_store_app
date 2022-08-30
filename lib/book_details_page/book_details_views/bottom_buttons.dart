@@ -1,11 +1,16 @@
-
+import 'package:book_store_app/cart_page/cart_page.dart';
 import 'package:book_store_app/models/book_model.dart';
 import 'package:flutter/material.dart';
+
 //import 'package:google_fonts/google_fonts.dart';
-class bottom_buttons extends StatelessWidget {
-  const bottom_buttons({
+
+class BuyAndDetailsButtons extends StatelessWidget {
+  const BuyAndDetailsButtons({
     Key? key,
+    required this.boughtBook, required this.desiredBookIndex,
   }) : super(key: key);
+  final BookModel boughtBook;
+  final int desiredBookIndex;
   static String price = BookModel.book[1].price;
   @override
   Widget build(BuildContext context) {
@@ -95,11 +100,18 @@ class bottom_buttons extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 )),
-                child:  Text(
-                  "Buy now for $price\$",
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400, color: Colors.white)
-                ),
-                onPressed: () => print('object'),
+                child: Text("Buy now for $price\$",
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white)),
+                onPressed: () {
+                  BookModel.book[desiredBookIndex].inCart = true;
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CartPage()));
+                },
               ),
             ),
           ),

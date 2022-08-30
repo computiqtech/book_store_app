@@ -37,7 +37,7 @@ class BookDetailsPage extends StatelessWidget {
             )
           ],
         ),
-        floatingActionButton: bottom_buttons());
+        floatingActionButton: BuyAndDetailsButtons(boughtBook: desiredBook, desiredBookIndex: 1,));
   }
 }
 

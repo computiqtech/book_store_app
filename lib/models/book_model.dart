@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BookModel{
-  const BookModel({
+class BookModel {
+   BookModel({
     Key? key,
     required this.imageUrl,
     required this.rating,
@@ -9,6 +9,7 @@ class BookModel{
     required this.author,
     required this.price,
     required this.description,
+    this.inCart,
   });
   final String imageUrl;
   final double rating;
@@ -16,43 +17,28 @@ class BookModel{
   final String author;
   final String price;
   final String description;
+  late bool? inCart;
+  
   static List<BookModel> book = [
-    const BookModel(
-      imageUrl: 'https://i.pinimg.com/564x/00/95/e0/0095e010d9d7e80fbe0d63f0459f5425.jpg',
+     BookModel(
+      imageUrl:
+          'https://i.pinimg.com/564x/00/95/e0/0095e010d9d7e80fbe0d63f0459f5425.jpg',
       rating: 4,
       title: 'Yves Saint Laurent',
       author: 'Suzy Monkes',
-      description:
-          'idkjndlkdjfnv;kjn',
+      description: 'idkjndlkdjfnv;kjn',
       price: '5',
+      inCart: false
     ),
-    const BookModel(
-      imageUrl: 'https://i.pinimg.com/564x/00/95/e0/0095e010d9d7e80fbe0d63f0459f5425.jpg',
+     BookModel(
+      imageUrl:
+          'https://i.pinimg.com/564x/00/95/e0/0095e010d9d7e80fbe0d63f0459f5425.jpg',
       rating: 5,
       title: 'Yves Saint Laurent2',
       author: 'Suzy Monkes2',
-      description:
-          '2',
+      description: '2',
       price: '12',
+      inCart: true
     ),
-    const BookModel(
-      imageUrl: 'https://i.pinimg.com/564x/00/95/e0/0095e010d9d7e80fbe0d63f0459f5425.jpg',
-      rating: 5,
-      title: 'Yves Saint Laurent2',
-      author: 'Suzy Monkes2',
-      description:
-          '2',
-      price: '12',
-    ),
-    const BookModel(
-      imageUrl: 'https://i.pinimg.com/564x/00/95/e0/0095e010d9d7e80fbe0d63f0459f5425.jpg',
-      rating: 5,
-      title: 'Yves Saint Laurent2',
-      author: 'Suzy Monkes2',
-      description:
-          '2',
-      price: '12',
-    )
   ];
 }
-
