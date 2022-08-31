@@ -1,10 +1,9 @@
-import 'package:my_book_store_app/add_book_page/add_book_page.dart';
 import 'package:flutter/material.dart';
-Widget ReusableTextField(
+
+Widget reusableTextField(
     {required hintText,
     required int lines,
     required TextEditingController myControler}) {
-      String givenValues;
   return Container(
     margin: const EdgeInsets.only(top: 17),
     decoration: BoxDecoration(
@@ -24,20 +23,13 @@ Widget ReusableTextField(
       decoration: InputDecoration(
           hintText: hintText,
           hintStyle: const TextStyle(color: Colors.grey),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide.none,
-          ),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+          enabledBorder: const OutlineInputBorder(borderSide: BorderSide.none),
           focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(width: 1, color: Colors.blue),
               borderRadius: BorderRadius.circular(15))),
       autofocus: false,
       controller: myControler,
-      onChanged: ((X) {
-        givenValues = AddBookPage.bookName.text;
-      }),
     ),
   );
 }

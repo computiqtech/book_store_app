@@ -2,19 +2,14 @@ import 'package:my_book_store_app/cart_page/cart_page.dart';
 import 'package:my_book_store_app/models/book_model.dart';
 import 'package:flutter/material.dart';
 
-//import 'package:google_fonts/google_fonts.dart';
-
 class BuyAndDetailsButtons extends StatelessWidget {
-  const BuyAndDetailsButtons({
-    Key? key,
-    required this.boughtBook,
-    required this.desiredBookIndex,
-  }) : super(key: key);
+  const BuyAndDetailsButtons({Key? key, required this.boughtBook, required this.desiredBookIndex}): super(key: key);
   final BookModel boughtBook;
   final int desiredBookIndex;
-  static String price = BookModel.book[1].price;
+
   @override
   Widget build(BuildContext context) {
+    String price = BookModel.book[desiredBookIndex].price;
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -25,9 +20,7 @@ class BuyAndDetailsButtons extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Spacer(
-                  flex: 2,
-                ),
+                const Spacer(flex: 2),
                 Container(
                   width: 150,
                   height: 45,
@@ -50,9 +43,7 @@ class BuyAndDetailsButtons extends StatelessWidget {
                     onPressed: () => print('object'),
                   ),
                 ),
-                const Spacer(
-                  flex: 1,
-                ),
+                const Spacer(flex: 1),
                 Container(
                   width: 150,
                   height: 45,
@@ -75,9 +66,7 @@ class BuyAndDetailsButtons extends StatelessWidget {
                     onPressed: () => print('object'),
                   ),
                 ),
-                const Spacer(
-                  flex: 2,
-                )
+                const Spacer(flex: 2)
               ],
             ),
           ),
@@ -102,10 +91,7 @@ class BuyAndDetailsButtons extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 )),
                 child: Text("Buy now for $price\$",
-                    style: const TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white)),
+                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w400, color: Colors.white)),
                 onPressed: () {
                   BookModel.book[desiredBookIndex].inCart = true;
                   Navigator.push(

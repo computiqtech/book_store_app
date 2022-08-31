@@ -1,11 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 class BookAuthor extends StatelessWidget {
-  const BookAuthor({
-    Key? key,
-    required this.author,
-  }) : super(key: key);
+  const BookAuthor({Key? key, required this.author}) : super(key: key);
   final String author;
   @override
   Widget build(BuildContext context) {

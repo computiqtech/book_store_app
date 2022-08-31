@@ -11,6 +11,7 @@ class Navigators extends StatelessWidget {
   bool? currentPageCart;
   Rx<bool> currentPageHomeRx = false.obs;
   Rx<bool> currentPageCartRx = false.obs;
+
   @override
   Widget build(BuildContext context) {
     currentPageCartRx.value = currentPageCart ?? false;
@@ -19,79 +20,44 @@ class Navigators extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 25, bottom: 10),
-            child: Container(
-              width: 250,
-              height: 60,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  //border: Border.all(color: Colors.black),
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey.withOpacity(0.1),
-                        spreadRadius: 1,
-                        blurRadius: 4,
-                        offset: const Offset(0, 9))
-                  ]),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                    onPressed: () {
-                      currentPageCartRx.value = currentPageCart ?? false;
-
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const MyHomePage()));
-                    },
-                    child: Obx(() {
-                      return Icon(Icons.home,
-                          color: currentPageHomeRx == false.obs
-                              ? Colors.grey
-                              : Colors.blue);
-                    }),
-                  ),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const CartPage()));
-                    },
-                    child: Icon(Icons.shopping_cart_rounded,
-                        color: currentPageCartRx == false.obs
-                            ? Colors.grey
-                            : Colors.blue),
-                  ),
-                  TextButton(
-                      style: TextButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const AddBookPage()));
-                      },
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.grey[500],
-                      )),
-                ],
-              ),
+          Container(
+            width: 250,
+            height: 60,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey.withOpacity(0.1),
+                      spreadRadius: 1,
+                      blurRadius: 4,
+                      offset: const Offset(0, 9))
+                ]),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                  onPressed: () {
+                    currentPageCartRx.value = currentPageCart ?? false;
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHomePage()));
+                  },
+                  child: Obx(() {
+                    return Icon(Icons.home,
+                        color: currentPageHomeRx == false.obs? Colors.grey: Colors.blue);
+                  }),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                  onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const CartPage()));},
+                  child: Icon(Icons.shopping_cart_rounded, color: currentPageCartRx == false.obs? Colors.grey: Colors.blue),
+                ),
+                TextButton(
+                    style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const AddBookPage()));},
+                    child: Icon(Icons.add, color: Colors.grey[500])
+                ),
+              ],
             ),
           )
         ],

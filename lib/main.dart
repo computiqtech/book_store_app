@@ -36,20 +36,20 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         body: Container(
           color: Colors.grey[100],
-          child:Padding(
-              padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
-              child:
-                  Column(crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                    const SizedBox(height: 50),
-                    const Profile(),
-                    const SearchBox(/*currentText: currentText*/),
-                    title('Book List'),
-                    const ListedBooks()
-              ]),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const SizedBox(height: 50),
+              const Profile(),
+              const SearchBox(),
+              title('Book List'),
+              const ListedBooks()
+            ]),
           ),
         ),
-        floatingActionButton:  Navigators(currentPageHome: true,),
+        floatingActionButton: Navigators(currentPageHome: true),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }
@@ -60,10 +60,7 @@ Padding title(String titles) {
     padding: const EdgeInsets.only(top: 35),
     child: Text(
       titles,
-      style: const TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 25,
-      ),
+      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
     ),
   );
 }

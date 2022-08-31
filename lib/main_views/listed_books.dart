@@ -4,12 +4,8 @@ import 'package:my_book_store_app/main_views/search_box.dart';
 import 'package:my_book_store_app/models/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-//import 'package:google_fonts/google_fonts.dart';
 class ListedBooks extends StatelessWidget {
-  const ListedBooks(
-      {Key? key, this.paddingLeft, this.paddingRight, this.toggleCartFilter})
-      : super(key: key);
+  const ListedBooks({Key? key, this.paddingLeft, this.paddingRight, this.toggleCartFilter}): super(key: key);
   final double? paddingLeft;
   final double? paddingRight;
   final bool? toggleCartFilter;
@@ -18,8 +14,7 @@ class ListedBooks extends StatelessWidget {
 
   bool filterSearchFunction(
       BookModel element, String searchWord, bool toggleCartFilter) {
-    if (toggleCartFilter == false &&
-        element.title.toLowerCase().contains(searchWord.toLowerCase())) {
+    if (toggleCartFilter == false && element.title.toLowerCase().contains(searchWord.toLowerCase())) {
       return true;
     }
     if (element.inCart == true && toggleCartFilter == true) {
@@ -33,15 +28,11 @@ class ListedBooks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.only(
-            bottom: MediaQuery.of(context).viewInsets.bottom +
-                55 // so that the whole thing always move +10
-            ),
+        margin: EdgeInsets.only( bottom: MediaQuery.of(context).viewInsets.bottom + 55),
         child: Obx(() {
           return ListView(
             controller: myScrollController,
-            padding: EdgeInsets.only(
-                bottom: 5, left: paddingLeft ?? 0, right: paddingRight ?? 0),
+            padding: EdgeInsets.only( bottom: 5, left: paddingLeft ?? 0, right: paddingRight ?? 0),
             children: BookModel.book
                 .where((element) => filterSearchFunction(element,
                     SearchBox.searchWord.value, toggleCartFilter ?? false))
@@ -71,32 +62,19 @@ class ListedBooks extends StatelessWidget {
                                 children: [
                                   Text(
                                     e.title,
-                                    style: /*GoogleFonts.lato*/ const TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w600),
+                                    style: const TextStyle( color: Colors.black, fontSize: 17, fontWeight: FontWeight.w600),
                                   ),
                                   Text(
                                     e.author,
-                                    style: /*GoogleFonts.lato*/ const TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600,
-                                        height: 2),
+                                    style: const TextStyle(color: Colors.grey, fontSize: 12, fontWeight: FontWeight.w600, height: 2),
                                   ),
                                   Text(
                                     "\$${e.price}",
-                                    style: /*GoogleFonts.lato*/ TextStyle(
-                                        color: Colors.grey[800],
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w600,
-                                        height: 2),
+                                    style: TextStyle(color: Colors.grey[800], fontSize: 17, fontWeight: FontWeight.w600, height: 2),
                                   ),
                                   Container(
                                     padding: const EdgeInsets.only(top: 10),
-                                    child: StarDisplay(
-                                      value: e.rating,
-                                    ),
+                                    child: StarDisplay(value: e.rating),
                                   )
                                 ],
                               ),
@@ -105,13 +83,7 @@ class ListedBooks extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        desiredBookIndex = BookModel.book.indexOf(e);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => BookDetailsPage(
-                                      desiredBook: e,
-                                    )));
+                        Navigator.push(context, MaterialPageRoute( builder: (context) => BookDetailsPage(desiredBook: e, desiredBookIndex: BookModel.book.indexOf(e),)));
                       },
                     ))
                 .toList(),

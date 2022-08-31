@@ -1,7 +1,6 @@
 import 'package:my_book_store_app/main_views/listed_books.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 class SearchBox extends StatelessWidget {
   const SearchBox({
     Key? key,
@@ -31,27 +30,16 @@ class SearchBox extends StatelessWidget {
         },
         textAlignVertical: TextAlignVertical.bottom,
         decoration: InputDecoration(
-            suffixIcon: TextButton(
-              style: TextButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              )),
-              child: Obx(() {
-                return Icon(Icons.search,
-                    color:
-                        searchWord.value.isEmpty ? Colors.grey : Colors.blue);
-              }),
-              onPressed: () => print('object'),
-            ),
+            suffixIcon: 
+              TextButton(style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
+                child: Obx(() {
+                  return Icon(Icons.search, color: searchWord.value.isEmpty? Colors.grey: Colors.blue);
+                }),
+                onPressed: () => print('object')),
             hintText: 'Search...',
             hintStyle: const TextStyle(color: Colors.grey),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              //borderSide: BorderSide.none,
-            ),
-            enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide.none,
-            ),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            enabledBorder: const OutlineInputBorder(borderSide: BorderSide.none),
             focusedBorder: OutlineInputBorder(
                 borderSide: const BorderSide(width: 1, color: Colors.blue),
                 borderRadius: BorderRadius.circular(15))),

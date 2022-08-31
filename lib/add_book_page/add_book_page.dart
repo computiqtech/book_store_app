@@ -5,9 +5,7 @@ import 'package:my_book_store_app/main.dart';
 import 'package:flutter/material.dart';
 
 class AddBookPage extends StatelessWidget {
-  const AddBookPage({
-    Key? key,
-  }) : super(key: key);
+  const AddBookPage({Key? key}) : super(key: key);
   static TextEditingController bookName = TextEditingController();
   static TextEditingController authorName = TextEditingController();
   static TextEditingController price = TextEditingController();
@@ -31,25 +29,21 @@ class AddBookPage extends StatelessWidget {
                 child: ListView(
                   padding: const EdgeInsets.only(left: 20, top: 30, right: 20),
                   children: [
-                    ReusableTextField(hintText: 'Book Name...', lines: 1, myControler: bookName),
-                    ReusableTextField(hintText: 'Author Name...', lines: 1, myControler: authorName),
-                    ReusableTextField(hintText: 'Price in \$...', lines: 1, myControler: price),
-                    ReusableTextField(hintText: 'Image Link...', lines: 1, myControler: imageLink),
-                    ReusableTextField(hintText: 'Rating...', lines: 1, myControler: rating),
+                    reusableTextField( hintText: 'Book Name..', lines: 1, myControler: bookName),
+                    reusableTextField( hintText: 'Author Name..', lines: 1, myControler: authorName),
+                    reusableTextField( hintText: 'Price in \$..', lines: 1, myControler: price),
+                    reusableTextField( hintText: 'Image Link..', lines: 1, myControler: imageLink),
+                    reusableTextField( hintText: 'Rating..', lines: 1, myControler: rating),
                     Container(
                         height: 172,
-                        margin: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).viewInsets.bottom +150 // so that the whole thing always move +10
-                        ),
-                        child:
-                            ReusableTextField(hintText: 'Description', lines: 6, myControler: description)),
-                   ],
+                        margin: EdgeInsets.only( bottom: MediaQuery.of(context).viewInsets.bottom + 150),
+                        child: reusableTextField( hintText: 'Description', lines: 6, myControler: description)),
+                  ],
                 ),
               )
             ],
           ),
-          floatingActionButton: const AddBookButton()
-          ),
+          floatingActionButton: const AddBookButton()),
     );
   }
 }
