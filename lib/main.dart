@@ -39,12 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
           child:Padding(
               padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
               child:
-                  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                const SizedBox(height: 50),
-                const Profile(),
-                const SearchBox(/*currentText: currentText*/),
-                title('Book List'),
-                const ListedBooks()
+                  Column(crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                    const SizedBox(height: 50),
+                    const Profile(),
+                    const SearchBox(/*currentText: currentText*/),
+                    title('Book List'),
+                    const ListedBooks()
               ]),
           ),
         ),
