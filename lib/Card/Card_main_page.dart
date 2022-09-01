@@ -67,8 +67,7 @@ class _Card1State extends State<Card1> {
                             color: Colors.red,
                           ))
                       .toList(),
-                )
-                )
+                ))
               ],
             ),
             Stack_part(

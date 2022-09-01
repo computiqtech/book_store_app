@@ -34,9 +34,10 @@ class _FavoriteState extends State<Favorite> {
                     IconButton(
                       onPressed: () {
                         Get.to(Main_page1(),
-                            duration: Duration(milliseconds: 200), //duration of transitions, default 1 sec
+                            duration: Duration(
+                                milliseconds:
+                                    200), //duration of transitions, default 1 sec
                             transition: Transition.fadeIn);
-
                       },
                       icon: const Icon(
                         Icons.arrow_back_ios,

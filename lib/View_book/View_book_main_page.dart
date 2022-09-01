@@ -24,7 +24,6 @@ class Veiw_Books extends StatelessWidget {
       backgroundColor: Color(0xFFEFEFEF),
       body: Stack(
         children: [
-
           Obx(() {
             return Column(
               children: [
@@ -41,12 +40,10 @@ class Veiw_Books extends StatelessWidget {
               ],
             );
           }),
-
           Padding(
             padding: const EdgeInsets.only(left: 30, right: 30, top: 45),
             child: App_bar(books: note),
           ),
-
         ],
       ),
     );
@@ -99,27 +96,55 @@ class page_veiw extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30, bottom: 30),
-            child: Container(
-                width: 319,
-                height: 60,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Color(0xFF06070D)),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
-                            side: BorderSide(color: Color(0xFF06070D)))),
-                  ),
-                  onPressed: () {
-                    books.makeBuy();
-                  },
-                  child: Text("Buy Now for\$ ${books.price.value}",
-                      style: TextStyle(fontSize: 18)),
-                )),
-          ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                    width: 200,
+                    height: 60,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.white),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Color(0xFF06070D)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16),
+                                    side:
+                                        BorderSide(color: Color(0xFF06070D)))),
+                      ),
+                      onPressed: () {
+                        books.makeBuy();
+                      },
+                      child: Text("Buy Now for \$${books.price.value}",
+                          style: TextStyle(fontSize: 18)),
+                    )),
+                Container(
+                    width: 140,
+                    height: 60,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.white),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.red),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16),
+                                    side: BorderSide(color: Colors.red))),
+                      ),
+                      onPressed: () {
+                        books.isBuy.value = false;
+                      },
+                      child: Text("  Cancel \npurchase ",
+                          style: TextStyle(fontSize: 18)),
+                    )),
+              ],
+            ),
+          )
         ],
       ),
     );

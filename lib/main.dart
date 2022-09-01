@@ -1,4 +1,3 @@
-import 'package:book_store_app/Card/Card_main_page.dart';
 import 'package:book_store_app/page1/main_page1.dart';
 import 'package:book_store_app/page2_Add_books/Add_books_main_page.dart';
 import 'package:book_store_app/page2_Add_books/Add_books_main_page.dart';

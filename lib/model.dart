@@ -36,8 +36,6 @@ class Books {
         isBuy: false.obs,
         isClickted: false.obs,
         myFavorite: false.obs),
-
-
     Books(
         'HARRY POTTER'.obs,
         'J.K Rowling'.obs,
@@ -68,7 +66,6 @@ class Books {
         isBuy: false.obs,
         isClickted: false.obs,
         myFavorite: false.obs),
-
     Books(
         'Dracula'.obs,
         'Bram Stoker'.obs,
@@ -79,11 +76,6 @@ class Books {
         isBuy: false.obs,
         isClickted: false.obs,
         myFavorite: false.obs),
-
-
-
-
-
   ];
   final RxString bookName;
   final RxString authorName;

@@ -15,7 +15,7 @@ class Description11 extends StatelessWidget {
 
         child: Text(
           Description1,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 15,
             color: Color(0xFF06070D),
