@@ -93,10 +93,7 @@ class BuyAndDetailsButtons extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 )),
                 child: Text("Buy now for $price\$",
-                    style: const TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white)),
+                    style: const TextStyle(fontSize: 17,fontWeight: FontWeight.w400, color: Colors.white)),
                 onPressed: () {
                   BookModel.book[desiredBookIndex].inCart = true;
                   Future.delayed(Duration(milliseconds: 150), () {Navigator.push(context,MaterialPageRoute(builder: (context) => const CartPage()));
