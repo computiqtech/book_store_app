@@ -83,7 +83,7 @@ class ListedBooks extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute( builder: (context) => BookDetailsPage(desiredBook: e, desiredBookIndex: BookModel.book.indexOf(e),)));
+                        Future.delayed(Duration(milliseconds: 170), (){Navigator.push(context, MaterialPageRoute( builder: (context) => BookDetailsPage(desiredBook: e, desiredBookIndex: BookModel.book.indexOf(e),)));});
                       },
                     ))
                 .toList(),

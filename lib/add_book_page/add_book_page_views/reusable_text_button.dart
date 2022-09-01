@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget reusableTextField(
-    {required hintText,
-    required int lines,
-    required TextEditingController myControler}) {
+Widget reusableTextField({required hintText, required int lines, required TextEditingController myControler}) {
   return Container(
     margin: const EdgeInsets.only(top: 17),
     decoration: BoxDecoration(

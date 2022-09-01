@@ -40,7 +40,7 @@ class Navigators extends StatelessWidget {
                   style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
                   onPressed: () {
                     currentPageCartRx.value = currentPageCart ?? false;
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHomePage()));
+                    Future.delayed(Duration(milliseconds: 170), (){Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHomePage()));});
                   },
                   child: Obx(() {
                     return Icon(Icons.home,
@@ -49,12 +49,12 @@ class Navigators extends StatelessWidget {
                 ),
                 TextButton(
                   style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
-                  onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const CartPage()));},
+                  onPressed: () {Future.delayed(Duration(milliseconds: 150), (){Navigator.push(context, MaterialPageRoute(builder: (context) => const CartPage()));});},
                   child: Icon(Icons.shopping_cart_rounded, color: currentPageCartRx == false.obs? Colors.grey: Colors.blue),
                 ),
                 TextButton(
                     style: TextButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
-                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const AddBookPage()));},
+                    onPressed: () {Future.delayed(Duration(milliseconds: 150), (){Navigator.push(context, MaterialPageRoute(builder: (context) => const AddBookPage()));});},
                     child: Icon(Icons.add, color: Colors.grey[500])
                 ),
               ],

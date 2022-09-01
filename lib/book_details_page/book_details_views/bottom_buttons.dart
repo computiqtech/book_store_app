@@ -3,7 +3,9 @@ import 'package:my_book_store_app/models/book_model.dart';
 import 'package:flutter/material.dart';
 
 class BuyAndDetailsButtons extends StatelessWidget {
-  const BuyAndDetailsButtons({Key? key, required this.boughtBook, required this.desiredBookIndex}): super(key: key);
+  const BuyAndDetailsButtons(
+      {Key? key, required this.boughtBook, required this.desiredBookIndex})
+      : super(key: key);
   final BookModel boughtBook;
   final int desiredBookIndex;
 
@@ -91,13 +93,14 @@ class BuyAndDetailsButtons extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 )),
                 child: Text("Buy now for $price\$",
-                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w400, color: Colors.white)),
+                    style: const TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white)),
                 onPressed: () {
                   BookModel.book[desiredBookIndex].inCart = true;
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CartPage()));
+                  Future.delayed(Duration(milliseconds: 150), () {Navigator.push(context,MaterialPageRoute(builder: (context) => const CartPage()));
+                  });
                 },
               ),
             ),
