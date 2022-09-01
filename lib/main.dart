@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Text(
             "Book Store App",
-            style: TextStyle(color: Colors.green),
+            style: TextStyle(color: Colors.green, fontSize: 30.0),
           ),
         ),
       ),
