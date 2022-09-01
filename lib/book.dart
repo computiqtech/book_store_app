@@ -13,7 +13,7 @@ class Book{
   final ImageProvider bookImage;
   final String description;
   bool isBought = false;
-  int rate = random.nextInt(5) + 3;
+  int rate = random.nextInt(2) + 3;
 
 
 
