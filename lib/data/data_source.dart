@@ -47,4 +47,21 @@ class DataSource {
       price: 64.99,
     ),
   ].obs;
+
+  static RxList<Book> cartItems = <Book>[
+    Book(
+      title: "Me Before You",
+      author: "Jojo Moyes",
+      cover: "https://api.lorem.space/image/book?w=150&h=220&hash=8B7BCDC5",
+      rate: 4.9,
+      price: 30.99,
+    ),
+    Book(
+      title: "Harry Potter and the Philosopher's Stone",
+      author: "J.K.Rowling",
+      cover: "https://api.lorem.space/image/book?w=150&h=220&hash=8B7BCDC6",
+      rate: 3.0,
+      price: 64.99,
+    ),
+  ].obs;
 }

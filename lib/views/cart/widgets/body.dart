@@ -19,7 +19,7 @@ class Body extends StatelessWidget {
           SizedBox(height: 30),
           BigTitle(title: "Cart"),
           SizedBox(height: 15),
-          BookList(books: DataSource.localBooks),
+          BookList(books: DataSource.cartItems),
         ],
       ),
     );
