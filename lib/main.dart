@@ -70,10 +70,17 @@ class Home extends StatelessWidget {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Add extends StatelessWidget {
-  const Add({Key? key}) : super(key: key);
+  Add({Key? key}) : super(key: key);
+
+  static TextEditingController imageController = TextEditingController();
+  static TextEditingController descriptionController = TextEditingController();
+  static TextEditingController nameController = TextEditingController();
+  static TextEditingController authController = TextEditingController();
+  static TextEditingController priceController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       home:Scaffold(
         appBar: AppBar(
@@ -90,16 +97,16 @@ class Add extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-            BackBar(),
-              AddBook(),
-              MyTextField(myWidth: 320, myHeight: 50, lines: 1, hint: 'Book Name', suffixIcon: null),
-              MyTextField(myWidth: 320, myHeight: 50, lines: 1, hint: 'Author Name', suffixIcon: null),
-              MyTextField(myWidth: 320, myHeight: 50, lines: 1, hint: 'Price', suffixIcon: null),
-              MyTextField(myWidth: 320, myHeight: 50, lines: 1, hint: 'Image Link', suffixIcon: null),
-              MyTextField(myWidth: 320, myHeight: 140, lines: 5, hint: 'Description', suffixIcon: null),
-              AddButton(),
-              SizedBox(height: 50,)
+            children: [
+            const BackBar(),
+              const AddBook(),
+              MyTextField(myWidth: 320, myHeight: 50, lines: 1, hint: 'Book Name', suffixIcon: null, myController: nameController),
+              MyTextField(myWidth: 320, myHeight: 50, lines: 1, hint: 'Author Name', suffixIcon: null, myController: authController),
+              MyTextField(myWidth: 320, myHeight: 50, lines: 1, hint: 'Price', suffixIcon: null, myController: priceController),
+              MyTextField(myWidth: 320, myHeight: 50, lines: 1, hint: 'Image Link', suffixIcon: null, myController: imageController),
+              MyTextField(myWidth: 320, myHeight: 140, lines: 5, hint: 'Description', suffixIcon: null, myController: descriptionController),
+              const AddButton(),
+              const SizedBox(height: 50,)
             ],
           ),
         )
@@ -149,34 +156,25 @@ class Cart extends StatelessWidget {
                         height: 622,
                         child: Expanded(
                           child: ListView(
-                              children: MyBooks.book.map((e) => TextButton(
-                                onPressed: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => BookDetails(myBook: e,)));
-                                },
-
-                                style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(right: 35),
-                                        child: Image.network(e.imageLink,
-                                          width: 80, height: 130,),
-                                      ),
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text(e.bookName, style: const TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),),
-                                          Text(e.bookAuth, style: const TextStyle(color: Colors.black87, fontSize: 12,height: 2),),
-                                          Text(e.price, style: const TextStyle(color: Colors.black, fontSize: 20,height: 2),),
-                                          const Stars(),
-                                        ],
-                                      )
-                                    ],
-                                  ),
+                              children: MyBooks.book.where((element) => element.condition.value == true).map((e) => Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 8),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 35),
+                                      child: Image.network(e.imageLink,
+                                        width: 80, height: 130,),
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(e.bookName, style: const TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),),
+                                        Text(e.bookAuth, style: const TextStyle(color: Colors.black87, fontSize: 12,height: 2),),
+                                        Text(e.price, style: const TextStyle(color: Colors.black, fontSize: 20,height: 2),),
+                                        const Stars(),
+                                      ],
+                                    )
+                                  ],
                                 ),
                               ),).toList()
                           ),

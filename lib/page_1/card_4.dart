@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 
 class Card4 extends StatelessWidget {
 
-  static RxString search = MyTextField.myController.text.obs;///
   const Card4({
     Key? key,
   }) : super(key: key);
@@ -22,10 +21,10 @@ class Card4 extends StatelessWidget {
       child: Expanded(
         child: ListView(
             children: MyBooks.book.map((e) => TextButton(
-              onPressed: () {
+              onPressed: (){
+                e.buy();
                 Navigator.push(context, MaterialPageRoute(builder: (context) => BookDetails(myBook: e,)));
               },
-
               style: TextButton.styleFrom(
                   padding: EdgeInsets.zero
               ),

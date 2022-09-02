@@ -25,6 +25,10 @@ class MyBooks {
     MyBooks(imageLink: 'https://i.harperapps.com/hcanz/covers/9780008563790/x293.jpg', bookName: 'fire and blood8', bookAuth: 'George RR Martin', price: r'$49.99', description: 'good book\ngood book\ngood book\n'),
   ];
 
+  buy(){
+    condition.value = true;
+  }
+
 }
 
 class Navigation {
