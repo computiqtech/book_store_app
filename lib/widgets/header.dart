@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Header extends StatelessWidget {
@@ -31,7 +32,7 @@ class Header extends StatelessWidget {
           IconButton(
             padding: EdgeInsets.zero,
             constraints: const BoxConstraints(),
-            onPressed: () {},
+            onPressed: () => Get.back(),
             icon: Icon(
               Icons.arrow_back_ios,
               color: Theme.of(context).primaryColor,
