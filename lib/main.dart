@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+
+import 'controllers/book_controller.dart';
+import 'views/screens/home_page.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
+
   runApp(const MyApp());
 }
 
@@ -9,12 +21,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text("Book Store App"),
-        ),
-      ),
+    Get.put(BookController());
+    return const GetMaterialApp(
+      title: 'Book Store',
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
     );
   }
 }
