@@ -7,7 +7,7 @@ class UserName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Hi, Kasm',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),);
+    return const Text('Hi, Kasm',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),);
   }
 }
 
@@ -18,7 +18,9 @@ class UserImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(width: 50,height: 50,decoration:
-    BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.red),);
+    return ClipRRect(borderRadius: BorderRadius.circular(8),
+      child: Image.network('https://api.lorem.space/image/face?w=150&h=150',
+        height: 50,width: 50,),
+    );
   }
 }

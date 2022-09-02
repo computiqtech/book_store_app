@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get_state_manager/get_state_manager.dart';
 import '../home_page/books_main/books_model.dart';
 import 'book_page_buttons/book_all_buttons.dart';
 import 'book_page_image/book_image.dart';
@@ -8,9 +8,10 @@ import 'book_page_texts/book_descrption.dart';
 import 'book_page_texts/book_name.dart';
 import 'book_page_texts/book_rate.dart';
 
-class BookPage extends StatelessWidget {
+class BookPage extends GetView {
   const BookPage({Key? key, required this.book}) : super(key: key);
   final BookData book;
+
   @override
   Widget build(BuildContext context){
     return MaterialApp(

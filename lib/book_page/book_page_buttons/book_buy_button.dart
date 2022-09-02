@@ -12,13 +12,15 @@ class BuyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(width: 319,height: 60,decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),color: Colors.black
-    ),child: Center(
-      child: Text('Buy Now for ${book.bookPrice}',
-        style: const TextStyle(color: Colors.white,
-            fontWeight:FontWeight.bold,
-            fontSize: 16),),
-    ),);
+    return GestureDetector(onTap: (){book.isInCart();},
+      child: Container(width: 319,height: 60,decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),color: Colors.black
+      ),child: Center(
+        child: Text('Buy Now for ${book.bookPrice}',
+          style: const TextStyle(color: Colors.white,
+              fontWeight:FontWeight.bold,
+              fontSize: 16),),
+      ),),
+    );
   }
 }

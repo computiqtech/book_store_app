@@ -13,13 +13,22 @@ class MySearchBar extends StatelessWidget {
         children: [
           Container(height: 50,width: 370,alignment: Alignment.center,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),color: const Color(0xffFFFFFF)),child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Padding(
-                  padding: EdgeInsets.only(left: 10.0),
-                  child: Text('Search...'),
+                borderRadius: BorderRadius.circular(8),
+                boxShadow:  const [
+                  BoxShadow(
+                    color: Color.fromRGBO(196,135,198,.2),
+                    blurRadius: 10,
+                    offset: Offset(0,.1),
+                  )
+                ],
+                color: const Color(0xffFFFFFF)),
+            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: const [
+                   Padding(
+                     padding: EdgeInsets.only(left: 10.0),
+                        child: Text('Search...'),
 
-                ),        Padding(
+                 ),        Padding(
                   padding: EdgeInsets.only(right: 10.0),
                   child: Icon(Icons.search),
                 )

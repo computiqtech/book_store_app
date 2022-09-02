@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 class BookData{
   final String bookName;
   final double bookRate;
@@ -5,17 +7,38 @@ class BookData{
   final String bookDescription;
   final String bookImage;
   final String bookPrice;
+  final RxBool inCart = false.obs;
 
   BookData({
-    required this.bookPrice,
     required this.bookName,
     required this.bookAuthor,
-    required this.bookDescription,
+    required this.bookPrice,
     required this.bookRate,
-    required this.bookImage
+    required this.bookImage,
+    required this.bookDescription,
   });
 
-  static List<BookData> books = [
+  isInCart(){
+    inCart.value = true;
+  }
+  static add(
+      String name,
+      String author,
+      String price,
+      double rate,
+      String link,
+      String description
+      ){
+    books.add(BookData(bookName: name,
+        bookAuthor: author,
+        bookPrice: price,
+        bookRate: rate,
+        bookImage: link,
+        bookDescription: description));
+  }
+
+
+  static RxList<BookData> books = <BookData>[
     BookData(bookName: 'bookName',
         bookAuthor: 'bookAuthor',
         bookDescription: 'bookDescription',
@@ -46,5 +69,5 @@ class BookData{
         bookRate: 5,
         bookImage: 'https://api.lorem.space/image/book?w=150&h=220&hash=BDC01094',
         bookPrice: '\$ 15')
-  ];
+  ].obs;
 }
