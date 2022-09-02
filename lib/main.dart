@@ -1,12 +1,6 @@
-import 'package:book_store_app/screens/add_book/add_book_screen.dart';
 
-import 'package:book_store_app/screens/cart/cart_screen.dart';
-import 'package:get/get.dart';
-import 'package:book_store_app/screens/detais_book_screen.dart';
-import 'package:book_store_app/screens/home/home_screens.dart';
+//Mortadah Emad
 import 'package:flutter/material.dart';
-
-
 
 void main() {
   runApp(const MyApp());
@@ -17,9 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+    return const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text("Book Store App"),
+        ),
+      ),
     );
   }
 }
