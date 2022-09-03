@@ -7,7 +7,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:book_store_app/model/model.dart';
 import 'package:book_store_app/modules/aboute/abouteScreen.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart'; 
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -86,8 +86,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   border: InputBorder.none,
                                 ),
                                 onChanged: (x) {
-                                  query = x.obs;
+                                  query.value = x;
+                          
                                 },
+                              
                               ),
                             ),
                           ],
