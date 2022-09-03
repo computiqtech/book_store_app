@@ -22,7 +22,7 @@ class Header extends StatelessWidget {
         if (isHomeHeader) const SizedBox(width: 12),
         if (isHomeHeader)
           Text(
-            "Hi, Ali!",
+            "Hi, Sadeq!",
             style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600,
                 fontSize: 16,

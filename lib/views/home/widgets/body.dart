@@ -16,12 +16,12 @@ class Body extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Header(isHomeHeader: true),
-          SizedBox(height: 30),
-          SearchBar(),
-          SizedBox(height: 30),
-          BigTitle(title: 'Book List'),
-          SizedBox(height: 15),
+          const Header(isHomeHeader: true),
+          const SizedBox(height: 30),
+          const SearchBar(),
+          const SizedBox(height: 30),
+          const BigTitle(title: 'Book List'),
+          const SizedBox(height: 15),
           Expanded(child: BookList(books: DataSource.localBooks)),
         ],
       ),
