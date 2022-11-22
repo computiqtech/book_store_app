@@ -1,47 +1,5 @@
-# Task 3 - Book Store App
-
-Task resolution process:
-
-- Fork the repo
-- Clone the forked repo to your local machine
-- Resolve the task
-- Commit your solution
-- Push to GitHub
-- create a pull request
-
-
-
-### Task 3:
-Build a book store mobile application. The store contain a list of available books with the ability to add custom books to the store as well as view, order them.
-
-* Don't use pre-made widgets (packges).
-* It's ok to use icons packages.
-* Use Getx for state management.
-
-## UI
-### Main Page
-The main page should contain a list of the available books. When tapping on a book, the second page (Book Details Page) will be navigated. Use Scrollable view for the list of books. ALso there is a simple search on the top of the page.
-
-
-### Cart Page (Optional)
-This page can view the ordered books.
-
-### Details Page
-This have the details of the book which is:
-- Book name
-- Author
-- Desciption
-- Image
-- Rate (constant)
-
-### Add Page
-It is the page where you can add new books to the store.
-
-## FLow
-1. Build the UI (from figma design).
-2. seperate the widgets to small and organized files.
-3. Build models that contain the book data (You can build one model or more).
-4. Try to seperate the logic (Functions and data) from the UI.
-
-## Figma Design
-https://www.figma.com/file/4BGkiFfTPT7b8K9pyFTBD6/Online-Book-Store-App-(2019)-(Community)?node-id=0%3A1
+![2022-08-25 21_20_14-Android Emulator - Pixel_5_API_33_5554](https://user-images.githubusercontent.com/58166633/203349049-f2809ae9-7707-4609-8427-544b9ca50940.png)
+![2022-08-25 21_20_23-Android Emulator - Pixel_5_API_33_5554](https://user-images.githubusercontent.com/58166633/203349053-e3c412f6-2acd-4554-b16b-5a7eb7c33433.png)
+![2022-08-25 21_20_41-Android Emulator - Pixel_5_API_33_5554](https://user-images.githubusercontent.com/58166633/203349056-d0173ea0-4cdb-4470-bfe4-629277e5b664.png)
+![2022-08-25 21_21_05-Android Emulator - Pixel_5_API_33_5554](https://user-images.githubusercontent.com/58166633/203349060-9d89bec5-fd40-473e-b057-36a8fb99997f.png)
+![2022-08-25 21_25_15-Android Emulator - Pixel_5_API_33_5554](https://user-images.githubusercontent.com/58166633/203349064-960764a2-8522-4de9-bcf2-a44d79850c93.png)
