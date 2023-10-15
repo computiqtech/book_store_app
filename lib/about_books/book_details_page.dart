@@ -27,10 +27,10 @@ class BookDetailsPage extends StatelessWidget {
               Stack(children: [
                 Column(
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
+                      children: [
                         Button2(icon: Icons.menu_outlined, text: 'Preview',),
                         Button2(icon: Icons.comment_outlined, text: 'Reviews',),
                       ],

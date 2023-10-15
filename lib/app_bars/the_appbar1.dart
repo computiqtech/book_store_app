@@ -15,8 +15,8 @@ class MyAppBar extends StatelessWidget {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-              image: const DecorationImage(
-                  image: AssetImage('assets/profile.png'), fit: BoxFit.cover),
+              // image: const DecorationImage(
+              //     image: AssetImage('assets/profile.png'), fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(10)),
         ),
         const Expanded(
